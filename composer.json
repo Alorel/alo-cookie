@@ -1,10 +1,10 @@
 {
-  "name": "alorel/alo-timer",
-  "description": "A simple countdown class when you need accuracy",
+  "name": "alorel/alo-cookie",
+  "description": "A simple JavaScript cookie manager",
   "prefer-stable": true,
   "type": "project",
   "license": "GPL-3.0+",
-  "homepage": "https://github.com/Alorel/alo-timer",
+  "homepage": "https://github.com/Alorel/alo-cookie",
   "keywords": [
     "JavaScript",
     "timer",
@@ -22,7 +22,7 @@
     }
   ],
   "support": {
-    "wiki": "https://github.com/Alorel/alo-timer/wiki",
-    "issues": "https://github.com/Alorel/alo-timer/issues"
+    "wiki": "https://github.com/Alorel/alo-cookie/wiki",
+    "issues": "https://github.com/Alorel/alo-cookie/issues"
   }
 }
