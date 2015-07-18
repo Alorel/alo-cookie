@@ -21,6 +21,7 @@ It's a simple class to manipulate cookies in an object-oriented manner.
     cookie.domain = "www.example.com"; //defaults to window.location.hostname
     cookie.path = "/cart/checkout"; // Defaults to "/"
     cookie.secure = true; // true sends the cookie only via HTTPS. Defaults to false.
+    cookie.save()
 
 
 ## Check if cookie called "foo" exists ##
