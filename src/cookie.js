@@ -64,46 +64,48 @@ AloCookie.getAll = function () {
     return ret;
 };
 
-/**
- * Saves the current cookie with its settings
- * @author Art <a.molcanovas@gmail.com>
- * @returns {AloCookie}
- */
-AloCookie.prototype.save = function () {
-    if (!this.name || this.value === "") {
-        throw "AloCookie name or value not present";
-    } else {
-        var str = this.name + "=" + this.value + "; path=" + this.path + "; domain=" + this.domain;
+AloCookie.prototype = {
+    /**
+     * Saves the current cookie with its settings
+     * @author Art <a.molcanovas@gmail.com>
+     * @returns {AloCookie}
+     */
+    save: function () {
+        if (!this.name || this.value === "") {
+            throw "AloCookie name or value not present";
+        } else {
+            var str = this.name + "=" + this.value + "; path=" + this.path + "; domain=" + this.domain;
 
-        if (this.expire) {
-            str += "; expires=" + (new Date(new Date().getTime() + (this.expire * 1000)).toUTCString());
+            if (this.expire) {
+                str += "; expires=" + (new Date(new Date().getTime() + (this.expire * 1000)).toUTCString());
+            }
+
+            if (this.secure) {
+                str += "; secure";
+            }
+
+            document.cookie = str;
         }
 
-        if (this.secure) {
-            str += "; secure";
-        }
+        return this;
+    },
 
-        document.cookie = str;
+    /**
+     * Returns whether the cookie with the given name exists
+     * @author Art <a.molcanovas@gmail.com>
+     * @returns {boolean}
+     */
+    exists: function () {
+        return this.name ? document.cookie.indexOf(this.name + "=") !== -1 : false;
+    },
+
+    /**
+     * Removes the cookie
+     * @author Art <a.molcanovas@gmail.com>
+     * @returns {AloCookie}
+     */
+    remove: function () {
+        document.cookie = this.name + "=;expires=Wed 01 Jan 1970";
+        return this;
     }
-
-    return this;
-};
-
-/**
- * Returns whether the cookie with the given name exists
- * @author Art <a.molcanovas@gmail.com>
- * @returns {boolean}
- */
-AloCookie.prototype.exists = function () {
-    return this.name ? document.cookie.indexOf(this.name + "=") !== -1 : false;
-};
-
-/**
- * Removes the cookie
- * @author Art <a.molcanovas@gmail.com>
- * @returns {AloCookie}
- */
-AloCookie.prototype.remove = function () {
-    document.cookie = this.name + "=;expires=Wed 01 Jan 1970";
-    return this;
 };
