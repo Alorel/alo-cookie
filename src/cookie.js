@@ -28,13 +28,13 @@ function AloCookie(name) {
      * AloCookie path
      * @type {string}
      */
-    this.path = "/";
+    this.path = null;
 
     /**
      * AloCookie domain
      * @type {string}
      */
-    this.domain = window.location.hostname;
+    this.domain = null;
 
     /**
      * Whether to only set the cookie via HTTPS. Defaults to TRUE if the page is opened via HTTPS, false if not.
@@ -74,7 +74,15 @@ AloCookie.prototype = {
         if (!this.name || this.value === "") {
             throw "AloCookie name or value not present";
         } else {
-            var str = this.name + "=" + this.value + "; path=" + this.path + "; domain=" + this.domain;
+            var str = this.name + "=" + this.value;
+
+            if (this.path) {
+                str += "; path=" + this.path;
+            }
+
+            if (this.domain) {
+                str += "; domain=" + this.domain;
+            }
 
             if (this.expire) {
                 str += "; expires=" + (new Date(new Date().getTime() + (this.expire * 1000)).toUTCString());
