@@ -13,7 +13,7 @@ function AloCookie(name) {
 
     /**
      * The cookie value
-     * @type {string}
+     * @type {string|number}
      */
     this.value = this.exists() ? AloCookie.getAll()[this.name] : "";
 
