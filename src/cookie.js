@@ -37,10 +37,10 @@ function AloCookie(name) {
     this.domain = window.location.hostname;
 
     /**
-     * Whether to only set the cookie via HTTPS
+     * Whether to only set the cookie via HTTPS. Defaults to TRUE if the page is opened via HTTPS, false if not.
      * @type {boolean}
      */
-    this.secure = false;
+    this.secure = window.location.protocol == "https:";
 }
 
 /**
