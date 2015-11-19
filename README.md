@@ -1,6 +1,6 @@
 ![Logo](https://cloud.githubusercontent.com/assets/4998038/8658729/8b3a918c-299d-11e5-8452-6b1b22c51618.png)
 
-[![License](https://poser.pugx.org/alorel/alo-cookie/license?format=plastic)](LICENSE) [![Latest Stable Version](https://poser.pugx.org/alorel/alo-cookie/v/stable?format=plastic)](https://packagist.org/packages/alorel/alo-cookie)  [![Total Downloads](https://poser.pugx.org/alorel/alo-cookie/downloads?format=plastic)](https://packagist.org/packages/alorel/alo-cookie)
+[![License](https://poser.pugx.org/alorel/alo-cookie/license?format=plastic)](LICENSE)
 
 
 # What is this sorcery ? #
