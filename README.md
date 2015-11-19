@@ -20,7 +20,7 @@ It's a simple class to manipulate cookies in an object-oriented manner.
     cookie.expire = 3600; //in 1 hour. Defaults to expire at the end of the session
     cookie.domain = "www.example.com"; //defaults to window.location.hostname
     cookie.path = "/cart/checkout"; // Defaults to "/"
-    cookie.secure = true; // true sends the cookie only via HTTPS. Defaults to false.
+    cookie.secure = true; // true sends the cookie only via HTTPS. Defaults to window.location.protocol == "https:"
     cookie.save()
 
 
