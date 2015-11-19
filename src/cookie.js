@@ -117,3 +117,12 @@ AloCookie.prototype = {
         return this;
     }
 };
+
+/**
+ * Returns an AloCookie object from the string
+ * @author Art <a.molcanovas@gmail.com>
+ * @returns {AloCookie}
+ */
+String.prototype.toCookie = function () {
+    return new AloCookie(this.valueOf());
+};
